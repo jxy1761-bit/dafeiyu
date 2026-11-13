@@ -1,0 +1,73 @@
+{
+    "enabled": {
+        "description": "启用记忆同步",
+        "hint": "关闭后不监听、不拉取，但不会改动已有记忆数据。",
+        "type": "bool",
+        "default": true
+    },
+    "role": {
+        "description": "本端角色",
+        "hint": "server=电脑端，负责接收并合并；client=手机端，定时把本地记忆推给电脑端；both=两边都监听且主动拉取。",
+        "type": "string",
+        "options": [
+            "client",
+            "server",
+            "both"
+        ],
+        "default": "client"
+    },
+    "device_name": {
+        "description": "本端名称",
+        "hint": "只用于日志和快照标记，不影响合并。",
+        "type": "string",
+        "default": "astrbot"
+    },
+    "listen_host": {
+        "description": "服务端监听地址",
+        "hint": "电脑端填 0.0.0.0 才能让手机通过局域网访问；只本机用可填 127.0.0.1。",
+        "type": "string",
+        "default": "0.0.0.0"
+    },
+    "listen_port": {
+        "description": "服务端端口",
+        "hint": "电脑防火墙需要放行这个端口。默认 8765。",
+        "type": "int",
+        "default": 8765
+    },
+    "peer_url": {
+        "description": "对端地址",
+        "hint": "手机端填电脑的局域网地址，例如 http://127.0.0.1:8765。电脑端可留空。",
+        "type": "string",
+        "default": ""
+    },
+    "token": {
+        "description": "同步密钥",
+        "hint": "两端必须完全一致。留空则同步不启动，避免同一局域网内被任意读写。",
+        "type": "string",
+        "default": ""
+    },
+    "interval_minutes": {
+        "description": "自动同步间隔（分钟）",
+        "hint": "手机端每隔这么久尝试连一次电脑；填 0 关闭自动同步，只保留手动 /记忆同步（省电）。电脑不在线时不会丢记忆。",
+        "type": "int",
+        "default": 10
+    },
+    "sync_on_start": {
+        "description": "启动后自动同步一次",
+        "hint": "AstrBot 启动 45 秒后尝试同步，等 LivingMemory 初始化完成。",
+        "type": "bool",
+        "default": true
+    },
+    "request_timeout": {
+        "description": "同步请求超时（秒）",
+        "hint": "记忆多时合并需要时间，默认 600 秒。",
+        "type": "int",
+        "default": 600
+    },
+    "backup_keep": {
+        "description": "同步前备份保留份数",
+        "hint": "每次落盘前把三库两索引复制到插件数据目录 backups/，保留最近几份。",
+        "type": "int",
+        "default": 3
+    }
+}

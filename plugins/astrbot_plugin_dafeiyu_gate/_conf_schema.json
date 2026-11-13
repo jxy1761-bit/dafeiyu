@@ -1,0 +1,32 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "总开关：关掉后陌生人不拦（不建议）",
+    "default": true
+  },
+  "platforms": {
+    "type": "string",
+    "description": "要拦截的平台，逗号分隔（默认只拦 telegram；webchat 控制台聊天室不受影响）",
+    "default": "telegram"
+  },
+  "owner_ids": {
+    "type": "string",
+    "description": "主人的平台用户 id，逗号/换行分隔；这些人的私聊直接放行",
+    "default": "10000000"
+  },
+  "block_private_strangers": {
+    "type": "bool",
+    "description": "私聊里拦下非主人用户（群聊不拦）",
+    "default": true
+  },
+  "stranger_reply": {
+    "type": "string",
+    "description": "拦下后回的一句拒绝话术；留空就静默拦截",
+    "default": "这个号只跟主人聊天，不加陌生人。"
+  },
+  "reply_cooldown_hours": {
+    "type": "float",
+    "description": "同一个陌生人多久内只回一次（小时；0 = 每次都回）",
+    "default": 24.0
+  }
+}

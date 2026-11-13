@@ -1,0 +1,8 @@
+{
+  "default_voice": {
+    "description": "默认音色",
+    "type": "string",
+    "hint": "控制台状态文件还没写时用这个；一般不用改",
+    "default": "dafeiyu_mihu"
+  }
+}

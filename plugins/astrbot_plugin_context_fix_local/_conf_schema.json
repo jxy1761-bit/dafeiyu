@@ -1,0 +1,86 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "启用本地模型版瘦身",
+    "default": true,
+    "hint": "这个插件是给本地 32k 模型用的。和云端的「大肥鱼·上下文清洗」二选一，两个同时开会对同一份历史重复处理。控制台切换模型时会自动启停。"
+  },
+  "strip_images": {
+    "type": "bool",
+    "description": "历史图片不再重复上传",
+    "default": true,
+    "hint": "一张 86KB 的图约一两万 token，本地 32k 根本扛不住第二遍。开启后历史 user 消息里的图换成一行文字，当前这一轮的新图照常发送。"
+  },
+  "fix_image": {
+    "type": "bool",
+    "description": "修正其它消息里的坏图片地址",
+    "default": true,
+    "hint": "url 被抹成 \"omitted\" 的老图会让接口报错，开启后换成文字占位。"
+  },
+  "drop_think": {
+    "type": "bool",
+    "description": "丢弃历史里的 think（推理）块",
+    "default": true,
+    "hint": "推理内容对本地模型没用，还白占上下文。本地模型本来就慢，留着只会让首字更晚。"
+  },
+  "strip_music": {
+    "type": "bool",
+    "description": "历史里的听歌笔记不再反复占上下文",
+    "default": true,
+    "hint": "听歌笔记带歌词和长篇分析，落进 history 后每轮重发。开启后历史笔记压成一行；当前这一轮刚听的歌不受影响。"
+  },
+  "compress_enable": {
+    "type": "bool",
+    "description": "开启自动上下文压缩",
+    "default": true,
+    "hint": "历史超过 trigger_chars 就保留最近若干条原样，把更早的文本压短、旧工具结果换成占位。"
+  },
+  "compress_trigger_chars": {
+    "type": "int",
+    "description": "触发压缩的历史字符数",
+    "default": 16000,
+    "hint": "本地模型只有 32k token，16000 字符约 9 千 token，留出足够余量给这一轮回复。云端版默认是 60000，本地版故意压得很早。"
+  },
+  "compress_keep_recent": {
+    "type": "int",
+    "description": "原样保留最近多少条消息",
+    "default": 12,
+    "hint": "12 条约等于最近 6 轮对话；再早的才会被压缩。调太小她会明显断片。"
+  },
+  "compress_old_chars": {
+    "type": "int",
+    "description": "旧 user/assistant 消息保留多少字",
+    "default": 90,
+    "hint": "更早的对话只留开头这么多字，并标记〔较早内容已压缩〕，细节靠长期记忆召回。"
+  },
+  "compress_tool_chars": {
+    "type": "int",
+    "description": "旧工具结果保留多少字",
+    "default": 120,
+    "hint": "超过这个长度的旧工具结果换成一行省略占位，避免搜索结果长期占上下文。"
+  },
+  "hard_limit_chars": {
+    "type": "int",
+    "description": "硬上限：压到这个字符数以下才发请求",
+    "default": 26000,
+    "hint": "本地版特有的兜底。超过 trigger_chars 只是普通压缩，压完仍高于 hard_limit_chars 会继续加狠（少留最近消息、旧消息留更短），还不够就整条丢掉最早的对话。26000 字符约 15k token，对 32k 的模型留了一半余量。"
+  },
+  "min_keep_messages": {
+    "type": "int",
+    "description": "兜底丢弃时至少保留最近多少条",
+    "default": 6,
+    "hint": "再怎么压也不会把最近这几条丢掉，保证她至少记得你刚说的话。"
+  },
+  "placeholder": {
+    "type": "string",
+    "description": "图片的替换文字",
+    "default": "[之前发过的图片，你看过了，内容已省略]",
+    "hint": "模型看到的就是这句话。写清楚「已经看过」能减少它反复追问。"
+  },
+  "log_every": {
+    "type": "int",
+    "description": "日志间隔（秒）",
+    "default": 60,
+    "hint": "清理发生时最多每隔这么多秒打一条 INFO 日志。"
+  }
+}

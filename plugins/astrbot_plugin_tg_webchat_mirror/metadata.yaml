@@ -1,0 +1,8 @@
+name: astrbot_plugin_tg_webchat_mirror
+display_name: 大肥鱼 · TG 同步到 WebChat
+desc: 把 Telegram 的往来消息镜像进 WebChat 的共享会话：写进 webchat 平台历史（重开 App 还在），同时通过本机 Hub 实时推给正在看的设备。只做 TG → WebChat，不反向，避免消息打环。
+help: 在 WebUI 插件配置里改 target_session / mirror_user / mirror_bot / sender_prefix；默认镜像到 shared 会话。
+version: v1.0.0
+author: local
+support_platforms:
+  - telegram

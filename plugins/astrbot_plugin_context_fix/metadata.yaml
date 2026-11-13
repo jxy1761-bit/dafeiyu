@@ -1,0 +1,6 @@
+name: astrbot_plugin_context_fix
+display_name: 大肥鱼·上下文清洗
+desc: 发请求前给历史瘦身：图片转占位、丢 think、修坏图、清理历史听歌笔记，并在历史过长时自动压缩上下文
+version: v0.3.0
+author: dafeiyu
+repo: https://example.invalid/dafeiyu/astrbot_plugin_context_fix

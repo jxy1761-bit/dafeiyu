@@ -1,0 +1,41 @@
+name: dafeiyu_chat
+description: "大肥鱼 · 局域网聊天客户端"
+publish_to: 'none'
+version: 0.2.4+6
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.0
+  shared_preferences: ^2.3.0
+  # 多模态:选图/选文件、放语音、录音、存表情包
+  file_picker: ^10.1.9
+  audioplayers: ^6.1.0
+  record: ^6.1.1
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    # 图标字形（Phosphor 子集），AppIcons 用。
+    - family: DshIcons
+      fonts:
+        - asset: assets/fonts/DshIcons.ttf
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+        - asset: assets/fonts/JetBrainsMono-Medium.ttf
+          weight: 500
+
+  assets:
+    - assets/dafeiyu/

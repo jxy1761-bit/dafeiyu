@@ -1,0 +1,7 @@
+name: astrbot_plugin_context_fix_local
+display_name: 大肥鱼·上下文清洗（本地模型版）
+desc: 本地 32k 模型专用：图片转占位、丢 think、清听歌笔记，并按本地上限把压缩阈值大幅提前；压完还超硬上限就继续收敛，直到这一轮装得下
+short_desc: 本地模型专用上下文瘦身
+version: v1.0.0
+author: dafeiyu
+repo: https://example.invalid/dafeiyu/astrbot_plugin_context_fix_local

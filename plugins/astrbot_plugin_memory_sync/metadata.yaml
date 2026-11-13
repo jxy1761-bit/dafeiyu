@@ -1,0 +1,9 @@
+name: astrbot_plugin_memory_sync
+display_name: 大肥鱼记忆同步
+desc: 电脑端与手机端 LivingMemory 双向同步：记忆、记忆原子、图节点、关系、FAISS 向量和活跃会话整体合并，合并后两端完全一致；删除通过基线墓碑双向生效
+help: 管理员发送 /记忆同步 立即同步，/记忆同步 状态 查看上次结果。电脑端配置 role=server，手机端配置 role=client 和电脑的局域网地址
+version: v1.0.0
+author: local
+support_platforms:
+  - aiocqhttp
+  - webchat

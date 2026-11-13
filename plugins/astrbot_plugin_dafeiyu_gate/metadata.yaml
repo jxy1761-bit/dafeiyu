@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_gate
+display_name: 大肥鱼陌生人闸
+desc: Telegram 私聊只放行主人，陌生人拦在 LLM 和记忆召回之前；群聊与控制台聊天室不受影响
+help: 主人 id 配在 owner_ids；被拦的陌生人按冷却时间只收到一句固定回绝，不调用模型、不写历史
+version: v0.1.0
+author: local
+support_platforms:
+  - telegram

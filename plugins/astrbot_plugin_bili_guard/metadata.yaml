@@ -1,0 +1,10 @@
+name: astrbot_plugin_bili_guard
+display_name: 大肥鱼B站提示词
+desc: 只补一段 B 站能力提示词，不解析链接、不碰工具参数。B 站功能全部交给 astrbot_plugin_dafeiyu_bili。
+help: 不需要指令。装上即生效；B 站具体功能用 /bili_login、/bili_watch、/bili_status 等（见大肥鱼 B 站 插件）。
+version: v0.5.4
+author: jxy
+support_platforms:
+  - telegram
+  - webchat
+  - aiocqhttp

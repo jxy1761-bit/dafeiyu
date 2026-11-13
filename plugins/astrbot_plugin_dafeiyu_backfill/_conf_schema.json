@@ -1,0 +1,72 @@
+{
+  "owner_qq": {
+    "type": "string",
+    "description": "主人的 QQ 号（只补他本人的私聊）",
+    "default": "10000000"
+  },
+  "enabled": {
+    "type": "bool",
+    "description": "启动时自动检查并补回复",
+    "default": true
+  },
+  "delay_seconds": {
+    "type": "int",
+    "description": "启动后等多少秒再检查（等协议端连上，太早会白跑）",
+    "default": 35
+  },
+  "max_age_hours": {
+    "type": "int",
+    "description": "只补多少小时以内的消息（太老的不补，免得突然收到一堆隔夜回复）",
+    "default": 72
+  },
+  "max_replies": {
+    "type": "int",
+    "description": "一次最多补几个会话（防止刷屏）",
+    "default": 3
+  },
+  "max_lines": {
+    "type": "int",
+    "description": "补的回复最多几行",
+    "default": 3
+  },
+  "fetch_from_onebot": {
+    "type": "bool",
+    "description": "是否再去协议端拉最近私聊，捞出「她根本没在线、消息没进 AstrBot」的那些",
+    "default": true
+  },
+  "onebot_count": {
+    "type": "int",
+    "description": "从协议端拉最近多少条消息来比对",
+    "default": 20
+  },
+  "dry_run": {
+    "type": "bool",
+    "description": "只把「打算回什么」写进日志，不真的发出去（调试用）",
+    "default": false
+  },
+  "temperature": {
+    "type": "float",
+    "description": "采样温度（越高越不套路，0.9-1.0 比较有活人味）",
+    "default": 0.95
+  },
+  "max_context_msgs": {
+    "type": "int",
+    "description": "带多少条历史当上下文",
+    "default": 30
+  },
+  "user_msg_max_chars": {
+    "type": "int",
+    "description": "你单条消息最多保留多少字（太小会把她读到的半句话截断）",
+    "default": 2000
+  },
+  "merge_lines": {
+    "type": "bool",
+    "description": "多行并成一条消息发（防风控，强烈建议开）",
+    "default": true
+  },
+  "min_gap_minutes": {
+    "type": "int",
+    "description": "两次自动补回复至少隔多少分钟（防止反复重启刷消息）",
+    "default": 30
+  }
+}

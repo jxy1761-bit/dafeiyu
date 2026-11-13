@@ -1,0 +1,32 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "同步总开关",
+    "default": true
+  },
+  "target_session": {
+    "type": "string",
+    "description": "镜像到哪个 WebChat 会话 id（App 默认用 shared）",
+    "default": "shared"
+  },
+  "mirror_user": {
+    "type": "bool",
+    "description": "同步对方发来的消息",
+    "default": true
+  },
+  "mirror_bot": {
+    "type": "bool",
+    "description": "同步她发出的回复",
+    "default": true
+  },
+  "sender_prefix": {
+    "type": "bool",
+    "description": "给 TG 用户消息加 [TG·名字] 前缀，群聊里好区分谁说的",
+    "default": true
+  },
+  "hub_url": {
+    "type": "string",
+    "description": "本机 Hub 的镜像入口；Hub 没开时只会写历史，不实时推送",
+    "default": "http://127.0.0.1:6186/hub/ingest"
+  }
+}

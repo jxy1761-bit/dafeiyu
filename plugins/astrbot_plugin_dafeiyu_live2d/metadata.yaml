@@ -1,0 +1,10 @@
+name: astrbot_plugin_dafeiyu_live2d
+display_name: 大肥鱼·桌宠联动
+desc: 把她的回复投给 PC 上的 Live2D 桌宠：PC 本机直连；手机 Telegram 轮询时镜像到 PC 中转（带 token）。连不上 5 分钟自动暂停，/pet_connect 手动恢复。
+help: 电脑端直接 POST 127.0.0.1:61943/say；手机端没有本机桌宠，就把同一段话发到 peer_url（PC 的 61944 中转）。语音由 PC 的 Breeze 合成，手机只传文字。每条回复会按语气附带一段鲸语小表演（pet_perform 工具或自动关键词），通过 /say 的 moves 和口型一起播放；表演标记不会进聊天正文。VTS 工具保留但默认关闭。
+version: v1.0.0
+author: local
+support_platforms:
+  - webchat
+  - telegram
+  - aiocqhttp

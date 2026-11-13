@@ -1,0 +1,6 @@
+name: astrbot_plugin_dafeiyu_web
+display_name: 大肥鱼·联网
+desc: 联网 + 看链接：web_search 搜索、web_page 读正文；对方发 B站/抖音/贴吧/小黑盒链接时自动用 ParseHub 解析标题正文和视频，视频声音用本机 ASR 转文字。TinyFish 搜索，失败退回 Bing RSS；key 只放本机。
+version: v0.2.2
+author: local
+repo: local

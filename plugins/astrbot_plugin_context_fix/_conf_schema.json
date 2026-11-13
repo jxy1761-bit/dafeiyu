@@ -1,0 +1,68 @@
+{
+  "strip_images": {
+    "type": "bool",
+    "description": "历史图片不再重复上传",
+    "default": true,
+    "hint": "你发过的图模型当轮就看过了，历史里再带一遍纯属浪费（一张 86KB 的图约一万多 token）。开启后把历史 user 消息里的图片块换成一行文字占位，当前这一轮的新图照常发送。"
+  },
+  "fix_image": {
+    "type": "bool",
+    "description": "修正其它消息里的坏图片地址",
+    "default": true,
+    "hint": "有些老图的 url 落库时被抹成了 \"omitted\"，严格接口会 400。开启后换成文字占位。"
+  },
+  "drop_think": {
+    "type": "bool",
+    "description": "丢弃历史里的 think（推理）块",
+    "default": true,
+    "hint": "小米 MiMo 等接口不认 {\"type\":\"think\"} 块，会报 Invalid request parameters。"
+  },
+  "strip_music": {
+    "type": "bool",
+    "description": "历史里的听歌笔记不再反复占上下文",
+    "default": true,
+    "hint": "听歌笔记里带歌词和长篇分析，落进 history 后每轮都会重发。开启后历史笔记会压成一行占位；当前这一轮刚听的歌照常生效。"
+  },
+  "compress_enable": {
+    "type": "bool",
+    "description": "开启自动上下文压缩",
+    "default": true,
+    "hint": "历史超过 trigger_chars 时，保留最近若干条原样，把更早的文本压短、旧工具结果换成占位。不改角色和 tool_calls，不碰记忆插件注入的内容。"
+  },
+  "compress_trigger_chars": {
+    "type": "int",
+    "description": "触发压缩的历史字符数",
+    "default": 60000,
+    "hint": "只数文本字符，不含图片占位。60000 大约相当于 3.5 万 token；想更早压缩就调小。"
+  },
+  "compress_keep_recent": {
+    "type": "int",
+    "description": "原样保留最近多少条消息",
+    "default": 30,
+    "hint": "30 条约等于最近 15 轮对话；再早的才会被压缩。"
+  },
+  "compress_old_chars": {
+    "type": "int",
+    "description": "旧 user/assistant 消息保留多少字",
+    "default": 160,
+    "hint": "更早的对话只留开头这么多字，并标记〔较早内容已压缩〕，细节由长期记忆模块按需召回。"
+  },
+  "compress_tool_chars": {
+    "type": "int",
+    "description": "旧工具结果保留多少字",
+    "default": 220,
+    "hint": "超过这个长度的旧工具结果直接换成一行省略占位，避免 shell 输出、搜索结果长期占上下文。"
+  },
+  "placeholder": {
+    "type": "string",
+    "description": "图片的替换文字",
+    "default": "[之前发过的图片，你看过了，内容已省略]",
+    "hint": "模型看到的就是这句话。写清楚「已经看过」能减少它反复追问。"
+  },
+  "log_every": {
+    "type": "int",
+    "description": "日志间隔（秒）",
+    "default": 60,
+    "hint": "清理发生时最多每隔这么多秒打一条 INFO 日志。"
+  }
+}

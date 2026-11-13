@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_voice_tool
+display_name: 大肥鱼自主语音
+desc: 给她两个语音能力：send_voice 让一句话用她自己的声音说出来（最长约一分钟，超了自动拆成几条连着发）；整段语音模式由「大肥鱼控制台 → 语音模式」手动开关控制（聊天里不再有切换入口）
+help: 需要先配一个 TTS 提供商（电脑用 Breeze 本机，手机用小米 MiMo）。没有固定触发概率，全靠她自己判断：撒娇、哄人、短句回应会发语音；解释事情还是打字。单条上限 58 秒；合成后末尾补 1 秒静音再转 silk，避免 QQ 把最后一个字播丢
+version: v0.2.1
+author: local
+support_platforms:
+  - aiocqhttp

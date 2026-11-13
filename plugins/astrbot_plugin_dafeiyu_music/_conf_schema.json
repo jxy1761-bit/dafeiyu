@@ -1,0 +1,97 @@
+{
+  "ffmpeg_path": {
+    "description": "ffmpeg.exe 的位置",
+    "type": "string",
+    "hint": "留空就用工作区里的 ffmpeg/bin/ffmpeg.exe",
+    "default": ""
+  },
+  "audio_lab_dir": {
+    "description": "音频实验室目录",
+    "type": "string",
+    "hint": "留空就用工作区的 .sys/audio-lab（venv、模型、输出都在里面）",
+    "default": ""
+  },
+  "max_seconds": {
+    "description": "最多听前多少秒",
+    "type": "int",
+    "hint": "抽音轨/人声分离最多保留多少秒；默认 300 秒，够唱完整首。",
+    "default": 300
+  },
+  "max_sing_seconds": {
+    "description": "唱多长（秒）",
+    "type": "int",
+    "hint": "单次非 full 模式最长 60 秒；要整首用 full=true。",
+    "default": 60
+  },
+  "group_need_at": {
+    "description": "群里要 @ 她才听",
+    "type": "bool",
+    "default": true
+  },
+  "video_need_hint": {
+    "description": "视频要提到歌/MV 才认真听",
+    "type": "bool",
+    "hint": "打开：发视频时她说「这首歌」「MV」「听听」才跑音乐模型，不然只走原来的看视频。关掉：每个视频都听（每次多等两三分钟）",
+    "default": true
+  },
+  "enable_sing": {
+    "description": "允许她用歌声唱两句",
+    "type": "bool",
+    "hint": "关掉就只点评不唱",
+    "default": true
+  },
+  "ref_wav": {
+    "description": "她的音色参考音频",
+    "type": "string",
+    "hint": "留空就用工作区 breeze/voices/dafeiyu_mihu_seedvc.wav",
+    "default": ""
+  },
+  "seedvc_steps": {
+    "description": "Seed-VC 扩散步数",
+    "type": "int",
+    "hint": "30 是官方推荐值；调低更快但音质差",
+    "default": 30
+  },
+  "sing_f16_ref": {
+    "type": "bool",
+    "description": "翻唱优先使用 F16 参考",
+    "default": true,
+    "hint": "用 F16 生成的 <音色>_seedvc_f16.wav 质量更好；没有时自动退回普通参考。唱歌前会临时切 F16 生成，完成后卸载。"
+  },
+  "analyze_seconds": {
+    "type": "int",
+    "description": "MOSS 只听前多少秒",
+    "default": 90,
+    "hint": "听歌分析只看前 90 秒，避免太长；Demucs 和翻唱还是用完整音频。"
+  },
+  "max_full_sing_seconds": {
+    "type": "int",
+    "description": "full=true 最长唱多少秒",
+    "default": 180,
+    "hint": "整首最多 3 分钟；Seed-VC 在 ROCm 上偏慢，3 分钟约要十几分钟。"
+  },
+  "max_sing_messages": {
+    "type": "int",
+    "description": "一次最多发几条唱段",
+    "default": 4,
+    "hint": "每条约 50 秒，4 条约 3 分钟；QQ 单条语音上限 60 秒。"
+  },
+  "sing_piece_seconds": {
+    "type": "int",
+    "description": "每条唱段多少秒",
+    "default": 50,
+    "hint": "留 10 秒余量给 QQ；会自动加 1 秒尾巴。"
+  },
+  "long_sing_threshold": {
+    "type": "int",
+    "description": "超过多少秒切长歌模式",
+    "default": 25,
+    "hint": "长歌降低 diffusion steps，速度优先；短句仍用高步数。"
+  },
+  "long_sing_steps": {
+    "type": "int",
+    "description": "长歌 diffusion steps",
+    "default": 18,
+    "hint": "18 步兼顾长音稳定和速度；机器够快可以调到 24~30，更慢但更稳。"
+  }
+}

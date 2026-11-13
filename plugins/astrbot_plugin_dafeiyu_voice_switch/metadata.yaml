@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_voice_switch
+display_name: 大肥鱼换声
+desc: 把「大肥鱼控制台 → 音色」里选中的 Breeze 音色应用到所有语音条；聊天里不再提供换声指令
+help: 打开大肥鱼控制台，在「音色」卡片里选、试听、设计；切换后下一条语音生效，翻唱会一起换
+version: v0.2.1
+author: zexuan604
+support_platforms:
+  - aiocqhttp

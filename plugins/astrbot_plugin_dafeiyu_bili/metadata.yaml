@@ -1,0 +1,9 @@
+name: astrbot_plugin_dafeiyu_bili
+display_name: 大肥鱼 B 站
+desc: 扫码登录 B 站；看视频/番剧/专栏/动态/音频/直播/UP；搜索热门、收藏、关注、历史、稍后再看、三连；点赞/投币/评论/动态/私信/弹幕全走主人确认
+help: 全部支持自然语言：登录B站、看看这个视频、B站热门、搜一下、收藏、关注、三连、私信、听直播弹幕、发弹幕、确认/取消草稿；斜杠命令也保留
+version: v0.2.1
+author: local
+support_platforms:
+  - telegram
+  - webchat

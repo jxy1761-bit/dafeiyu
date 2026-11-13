@@ -1,0 +1,39 @@
+{
+  "max_seconds": {
+    "type": "int",
+    "description": "单条语音最长多少秒（QQ 语音上限 60 秒，默认 58 留余量）",
+    "default": 58,
+    "hint": "超过这个时长会自动对半切开，分成几条连着发"
+  },
+  "max_chars": {
+    "type": "int",
+    "description": "每条语音预备念多少字（中文约 4.5 字/秒，240 字约 52 秒）",
+    "default": 240,
+    "hint": "实际长度还是按合成出来的真实时长判断，字数是第一刀"
+  },
+  "max_messages": {
+    "type": "int",
+    "description": "一轮最多连着发几条语音（超出的部分不再念）",
+    "default": 5
+  },
+  "chunk_gap_ms": {
+    "type": "int",
+    "description": "连着发多条语音时，两条之间的间隔（毫秒）",
+    "default": 800
+  },
+  "mode_hours": {
+    "type": "int",
+    "description": "「整段语音聊天」模式开多久自动关（小时，0 = 一直开着直到她说停）",
+    "default": 0
+  },
+  "voice_mode_default": {
+    "type": "bool",
+    "description": "默认就整段语音？一般关着，等她说「接下来都用语音」再开",
+    "default": false
+  },
+  "use_silk": {
+    "type": "bool",
+    "description": "发出去前把 WAV 转成 QQ 原生 SILK（体积小一个数量级，建议开）",
+    "default": true
+  }
+}

@@ -1,0 +1,9 @@
+name: astrbot_plugin_dafeiyu_proactive_tg
+display_name: 大肥鱼 · 想你了
+desc: 只对主人私聊生效的主动消息：她自己判断这一刻想不想你，想就发一条没有任务味的“就是突然想戳你一下”。带静默时段、每日上限、被无视退避、发送失败冷却，以及只引用真实共同经历的记忆素材门控。
+help: /戳我 或 /想你了 立刻让她主动发一条；/主动预览 只生成不发送（会显示用了哪条真实素材）；/主动状态 看频率；/主动开 /主动关 控制开关
+version: v1.3.0
+author: local
+support_platforms:
+  - telegram
+  - webchat

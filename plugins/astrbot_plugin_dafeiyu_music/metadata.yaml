@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_music
+display_name: 大肥鱼听歌
+desc: 听歌/翻唱 + 模型交接：默认唱 45 秒、可到 60 秒或整首（自动切多条语音）；长歌自动降 diffusion steps 提速；听歌前停 F16/卸载识图，唱完恢复语音； 听歌/翻唱 + 模型交接：听歌前自动停 F16/Breeze、卸载识图模型腾显存；翻唱优先用 F16 参考，唱完再把语音引擎拉回来； 有人发歌或带音乐的 MV 时，用本机 MOSS-Audio 真正听一遍（风格、情绪、配器、结构、歌词），需要时再用 Seed-VC 把副歌换成她的 Breeze 音色唱两句
+help: 需要电脑 .sys/audio-lab 下的环境和模型。私聊直接发歌/MV；群里 @ 她。让她唱两句时说「你唱两句」「学一下」即可
+version: v0.2.1
+author: zexuan604
+support_platforms:
+  - aiocqhttp

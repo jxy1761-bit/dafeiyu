@@ -1,0 +1,9 @@
+name: astrbot_plugin_dafeiyu_embed
+display_name: 大肥鱼本地记忆向量
+desc: 在手机内启动 llama.cpp bge-m3 向量服务（127.0.0.1:11434），供 livingmemory 记忆召回使用，不依赖电脑
+help: 无需操作。随 AstrBot 启动自动拉起 /persistent/tools/llama.cpp/llama-server，端口被占用时不会重复启动
+version: v1.0.0
+author: local
+support_platforms:
+  - aiocqhttp
+  - webchat

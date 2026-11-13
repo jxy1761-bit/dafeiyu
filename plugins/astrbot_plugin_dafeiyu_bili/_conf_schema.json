@@ -1,0 +1,232 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "总开关：关掉后不自动看链接，也不响应 B 站命令",
+    "default": true
+  },
+  "group_need_at": {
+    "type": "bool",
+    "description": "群里只有 @ 她或叫醒时才看 B 站链接",
+    "default": true
+  },
+  "max_duration": {
+    "type": "int",
+    "description": "超过这个时长的视频不下载全片（秒），只读字幕/弹幕",
+    "default": 1200
+  },
+  "max_download_mb": {
+    "type": "int",
+    "description": "单个视频/音频最大下载体积（MB）",
+    "default": 300
+  },
+  "frames": {
+    "type": "int",
+    "description": "抽帧数量（建议 9 或 16）",
+    "default": 9
+  },
+  "grid": {
+    "type": "string",
+    "description": "九宫格布局，如 3x3 / 4x4",
+    "default": "3x3"
+  },
+  "asr_max_seconds": {
+    "type": "int",
+    "description": "没有官方字幕时，最多转写前多少秒",
+    "default": 600
+  },
+  "asr_key": {
+    "type": "string",
+    "description": "可选：MiMo ASR 的 key；留空自动从 AstrBot 的小米语音服务商读取",
+    "default": ""
+  },
+  "cache_hours": {
+    "type": "int",
+    "description": "同一个 BV 的分析缓存多久（小时）",
+    "default": 24
+  },
+  "ffmpeg_path": {
+    "type": "string",
+    "description": "可选：ffmpeg 路径；留空自动找",
+    "default": ""
+  },
+  "auto_like": {
+    "type": "bool",
+    "description": "看完视频低频率自动点赞（有每日额度）",
+    "default": true
+  },
+  "auto_like_probability": {
+    "type": "float",
+    "description": "自动点赞概率 0~1",
+    "default": 0.5
+  },
+  "auto_dynamic": {
+    "type": "bool",
+    "description": "每天自动发一条看过的视频动态（未登录只存草稿；登录后按额度发布）",
+    "default": false
+  },
+  "dynamic_hour": {
+    "type": "int",
+    "description": "自动动态从几点开始（0-23）",
+    "default": 20
+  },
+  "listen_minutes": {
+    "type": "int",
+    "description": "每隔多少分钟查一次「回复我的/@我的」并通知主人；0=关闭",
+    "default": 0
+  },
+  "owner_umo": {
+    "type": "string",
+    "description": "可选：主人会话（如 telegram:FriendMessage:10000000）；留空自动从主动消息配置读",
+    "default": ""
+  },
+  "daily_like": {
+    "type": "int",
+    "description": "每天最多点赞",
+    "default": 5
+  },
+  "daily_coin": {
+    "type": "int",
+    "description": "每天最多投币",
+    "default": 2
+  },
+  "daily_comment": {
+    "type": "int",
+    "description": "每天最多评论",
+    "default": 3
+  },
+  "daily_dynamic": {
+    "type": "int",
+    "description": "每天最多动态",
+    "default": 1
+  },
+  "daily_share": {
+    "type": "int",
+    "description": "每天最多分享",
+    "default": 1
+  },
+  "min_gap_like": {
+    "type": "int",
+    "description": "两次点赞最小间隔（秒）",
+    "default": 60
+  },
+  "min_gap_coin": {
+    "type": "int",
+    "description": "两次投币最小间隔（秒）",
+    "default": 600
+  },
+  "min_gap_comment": {
+    "type": "int",
+    "description": "两次评论最小间隔（秒）",
+    "default": 300
+  },
+  "min_gap_dynamic": {
+    "type": "int",
+    "description": "两条动态最小间隔（秒）",
+    "default": 21600
+  },
+  "min_gap_share": {
+    "type": "int",
+    "description": "两次分享最小间隔（秒）",
+    "default": 3600
+  },
+  "send_video_mb": {
+    "type": "int",
+    "description": "下载后直接发聊天的视频体积上限（MB），超过只给链接",
+    "default": 45
+  },
+  "live_max_minutes": {
+    "type": "int",
+    "description": "一次直播弹幕监听最多多少分钟",
+    "default": 10
+  },
+  "daily_favorite": {
+    "type": "int",
+    "description": "每天最多收藏/取消收藏",
+    "default": 10
+  },
+  "min_gap_favorite": {
+    "type": "int",
+    "description": "两次收藏最小间隔（秒）",
+    "default": 30
+  },
+  "daily_follow": {
+    "type": "int",
+    "description": "每天最多关注/取关",
+    "default": 3
+  },
+  "min_gap_follow": {
+    "type": "int",
+    "description": "两次关注最小间隔（秒）",
+    "default": 60
+  },
+  "daily_dm": {
+    "type": "int",
+    "description": "每天最多发私信（草稿确认后才发）",
+    "default": 3
+  },
+  "min_gap_dm": {
+    "type": "int",
+    "description": "两封私信最小间隔（秒）",
+    "default": 300
+  },
+  "daily_danmaku": {
+    "type": "int",
+    "description": "每天最多发直播弹幕（草稿确认后才发）",
+    "default": 5
+  },
+  "min_gap_danmaku": {
+    "type": "int",
+    "description": "两条直播弹幕最小间隔（秒）",
+    "default": 60
+  },
+  "daily_triple": {
+    "type": "int",
+    "description": "每天最多三连",
+    "default": 2
+  },
+  "min_gap_triple": {
+    "type": "int",
+    "description": "两次三连最小间隔（秒）",
+    "default": 600
+  },
+  "daily_watch_later": {
+    "type": "int",
+    "description": "每天最多加/移稍后再看",
+    "default": 20
+  },
+  "min_gap_watch_later": {
+    "type": "int",
+    "description": "两次稍后再看操作最小间隔（秒）",
+    "default": 5
+  },
+  "study_max_minutes": {
+    "type": "int",
+    "description": "一次限时学习最多多少分钟",
+    "default": 120
+  },
+  "study_max_video_minutes": {
+    "type": "int",
+    "description": "单个视频超过多少分钟就跳过（避免一个视频看太久）",
+    "default": 45
+  },
+  "study_default_interval": {
+    "type": "int",
+    "description": "学习任务默认每几分钟汇报一次进度",
+    "default": 5
+  },
+  "study_max_videos": {
+    "type": "int",
+    "description": "一次学习最多看多少个视频，0=只按时间",
+    "default": 30
+  },
+  "study_llm_notes": {
+    "type": "bool",
+    "description": "是否用对话模型把素材写成学习笔记（关掉就直接存摘要）",
+    "default": true
+  },
+  "study_note_chars": {
+    "type": "int",
+    "description": "每条学习笔记最多保留多少字",
+    "default": 3000
+  }
+}

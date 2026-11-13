@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_backfill
+display_name: 大肥鱼离线补回复
+desc: 服务启动时回头检查：有没有你发过来、她却没回复的消息，有就当场补上（写回历史，不会重复补）
+help: 私聊发 /补回复 可以手动检查一次；配置里把 dry_run 打开就只记日志不发消息
+version: v0.1.0
+author: local
+support_platforms:
+  - aiocqhttp

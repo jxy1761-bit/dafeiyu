@@ -1,0 +1,88 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "启用桌宠联动",
+    "default": true
+  },
+  "voice": {
+    "type": "bool",
+    "description": "让桌宠用 Breeze 念出来",
+    "default": true,
+    "hint": "关掉就只出气泡。她这轮已经发了语音条时，桌宠自动只出气泡，避免同一句念两遍"
+  },
+  "vts_enabled": {
+    "type": "bool",
+    "description": "启用 VTube Studio 动作工具",
+    "default": false,
+    "hint": "默认关闭。VTS 桥和 VTS 本体都没启动时不要开；开启后 LLM 可以用 vts_actions / vts_action / vts_face 控制 VTS 热键和表情"
+  },
+  "vts_bridge_url": {
+    "type": "string",
+    "description": "VTS Action Bridge 地址（可留空）",
+    "default": "",
+    "hint": "电脑端留空 = http://127.0.0.1:61946/vts；手机端留空 = 走 peer_url 的 /vts 中转。也可以填完整地址"
+  },
+  "vts_auto": {
+    "type": "bool",
+    "description": "回复后自动按语气切 VTS 表情",
+    "default": false,
+    "hint": "默认关闭。需要先启用 VTS 动作工具并启动桥；LLM 没主动调用 vts_face/vts_action 时才会按关键词切脸"
+  },
+  "auto_perform": {
+    "type": "bool",
+    "description": "每条回复自动带一段鲸语小表演",
+    "default": true,
+    "hint": "开启后要求她在回复末尾写 [perform: ...] 标记，插件把动作随 /say 一起送到鲸语舞台；标记不会进聊天正文"
+  },
+  "only_private": {
+    "type": "bool",
+    "description": "只在私聊时投给桌宠",
+    "default": true,
+    "hint": "关掉的话群聊回复也会让桌宠说话；一般保持开着，免得群里刷屏"
+  },
+  "max_chars": {
+    "type": "int",
+    "description": "投给桌宠的最长字数",
+    "default": 260,
+    "hint": "气泡本身最多 300 字；语音按这段文字合成，太长会拖慢"
+  },
+  "local_url": {
+    "type": "string",
+    "description": "本机桌宠地址",
+    "default": "http://127.0.0.1:61943"
+  },
+  "local_timeout": {
+    "type": "float",
+    "description": "本机桌宠超时（秒）",
+    "default": 2.5
+  },
+  "mirror": {
+    "type": "bool",
+    "description": "本机没有桌宠时镜像到 PC",
+    "default": true,
+    "hint": "手机上开；电脑端可以关掉，省得桌宠没开时还去试自己"
+  },
+  "peer_url": {
+    "type": "string",
+    "description": "PC 中转地址（手机端填）",
+    "default": "",
+    "hint": "例如 http://127.0.0.1:61944；电脑端留空"
+  },
+  "peer_token": {
+    "type": "string",
+    "description": "PC 中转 token",
+    "default": "",
+    "hint": "和 PC 的 pet/relay.json 里的 token 完全一致"
+  },
+  "peer_timeout": {
+    "type": "float",
+    "description": "PC 中转超时（秒）",
+    "default": 4.0
+  },
+  "give_up_minutes": {
+    "type": "int",
+    "description": "连续连不上多久就暂停镜像（分钟）",
+    "default": 5,
+    "hint": "暂停后不再尝试；发 /pet_connect 或 /桌宠连接 手动恢复"
+  }
+}

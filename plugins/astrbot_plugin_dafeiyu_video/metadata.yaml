@@ -1,0 +1,8 @@
+name: astrbot_plugin_dafeiyu_video
+display_name: 大肥鱼看视频
+desc: 有人发视频时，用 ffmpeg 均匀截几张画面交给对话模型看；声音用本机识别（装了的话）或小米 MiMo 转写，也能听 QQ 语音。视频私聊都看、群里被 @ 才看；语音私聊、群里都听
+help: 电脑上要有 ffmpeg。私聊直接发视频（电脑 QQ 按文件发的 mp4 等也认）；群里发视频时 @ 她。语音直接发就行
+version: v0.4.1
+author: zexuan604
+support_platforms:
+  - aiocqhttp
